@@ -24,7 +24,9 @@ describe('useCounter', () => {
     const { result } = renderHook(() => useCounter());
     act(() => {
       result.current.setVal(5);
-      result.current.increment();
+    });
+    act(() => {
+        result.current.increment();
     });
     expect(result.current.count).toBe(5);
   });
@@ -33,7 +35,9 @@ describe('useCounter', () => {
     const { result } = renderHook(() => useCounter());
     act(() => {
       result.current.setVal(-2);
-      result.current.increment();
+    });
+    act(() => {
+        result.current.increment();
     });
     expect(result.current.count).toBe(-2);
   });
@@ -42,7 +46,9 @@ describe('useCounter', () => {
     const { result } = renderHook(() => useCounter());
     act(() => {
       result.current.setVal(0);
-      result.current.increment();
+    });
+    act(() => {
+        result.current.increment();
     });
     expect(result.current.count).toBe(0);
   });
@@ -51,8 +57,12 @@ describe('useCounter', () => {
     const { result } = renderHook(() => useCounter());
     act(() => {
       result.current.setVal(2);
-      result.current.increment();
-      result.current.increment();
+    });
+    act(() => {
+        result.current.increment();
+    });
+    act(() => {
+        result.current.increment();
     });
     expect(result.current.count).toBe(4);
   });
